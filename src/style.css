@@ -60,6 +60,13 @@ li p {
   white-space: pre-wrap;
 }
 
+.timestamp {
+  display: block;
+  font-size: 12px;
+  color: #57606a;
+  margin-bottom: 8px;
+}
+
 li button {
   background: #d1242f;
   padding: 4px 10px;

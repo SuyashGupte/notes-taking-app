@@ -14,7 +14,7 @@ export default function App() {
   function handleSubmit(e) {
     e.preventDefault();
     setNotes([
-      { id: Date.now(), title: title.trim(), description: description.trim() },
+      { id: Date.now(), title: title.trim(), description: description.trim(), createdAt: new Date().toISOString() },
       ...notes,
     ]);
     setTitle("");
@@ -52,6 +52,11 @@ export default function App() {
           <li key={note.id}>
             <h2>{note.title}</h2>
             <p>{note.description}</p>
+            {note.createdAt && (
+              <span className="timestamp">
+                {new Date(note.createdAt).toLocaleString()}
+              </span>
+            )}
             <button onClick={() => deleteNote(note.id)}>Delete</button>
           </li>
         ))}
